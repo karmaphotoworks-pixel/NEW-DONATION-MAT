@@ -1,0 +1,22 @@
+{
+  "name": "donation-webhook-vercel",
+  "version": "1.0.0",
+  "description": "Webhook server untuk menerima donasi dari Saweria/Sociabuzz dan mengirim ke Roblox",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "webhook",
+    "donation",
+    "roblox",
+    "saweria",
+    "sociabuzz"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
