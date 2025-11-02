@@ -27,8 +27,13 @@ export default async function handler(req, res) {
   }
 
   try {
-   // Akses global storage
-const latestDonation = global.donationStorage?.latest || null;
+// Akses global storage
+const allDonations = global.donationStorage?.all || [];
+
+// Pagination
+const startIndex = (page - 1) * limit;
+const endIndex = startIndex + limit;
+const paginatedDonations = allDonations.slice(startIndex, endIndex);
     
     // Jika tidak ada donasi
     if (!latestDonation) {
