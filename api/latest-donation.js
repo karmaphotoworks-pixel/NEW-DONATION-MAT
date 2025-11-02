@@ -48,12 +48,14 @@ const paginatedDonations = allDonations.slice(startIndex, endIndex);
     console.log('📤 Latest donation requested at:', new Date().toISOString());
     console.log('   Returning:', latestDonation.donatur, '- Rp', latestDonation.jumlah);
 
-    // Return donasi terbaru
     return res.status(200).json({
-      success: true,
-      message: 'Latest donation retrieved successfully',
-      data: latestDonation
-    });
+  success: true,
+  message: 'Donations retrieved successfully',
+  total: allDonations.length,
+  page: page,
+  limit: limit,
+  data: paginatedDonations
+});
 
   } catch (error) {
     console.error('❌ Error fetching latest donation:', error);
