@@ -27,9 +27,9 @@ export default async function handler(req, res) {
   }
 
   try {
-  // Akses global storage
-   const latestDonation = global.donationStorage?.latest || null;
-
+   // Akses global storage
+const latestDonation = global.donationStorage?.latest || null;
+    
     // Jika tidak ada donasi
     if (!latestDonation) {
       return res.status(200).json({
